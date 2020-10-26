@@ -19,9 +19,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         auth.inMemoryAuthentication()
                 .withUser(users.username("soring").password("test").roles("EMPLOYEE"))
-                .withUser(users.username("dorins").password("test").roles("ADMIN","EMPLOYEE"))
-                .withUser(users.username("marinaf").password("test").roles("MANAGER","EMPLOYEE"))
-                .withUser(users.username("vasileg").password("test").roles("ADMIN","EMPLOYEE"));
+                .withUser(users.username("dorins").password("test").roles("EMPLOYEE","MANAGER"))
+                .withUser(users.username("marinaf").password("test").roles("EMPLOYEE","MANAGER","DIRECTOR"))
+                .withUser(users.username("vasileg").password("test").roles("EMPLOYEE","MANAGER","DIRECTOR","ADMIN"));
     }
 
     @Override
@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/showLoginPage").permitAll()
                 .antMatchers("/leaders/**").hasRole("MANAGER")
+                .antMatchers("/directors/**").hasRole("DIRECTOR")
                 .antMatchers("/systems/**").hasRole("ADMIN")
                 .and()
                 .formLogin()

@@ -45,6 +45,17 @@
     </security:authorize>
 
 
+    <security:authorize access="hasRole('DIRECTOR')">
+
+        <!-- Add a link to point to /systems ... this is for the admins -->
+
+        <p>
+            <a href="${pageContext.request.contextPath}/directors">IT Systems Meeting</a>
+            (Only for Directors peeps)
+        </p>
+
+    </security:authorize>
+
     <security:authorize access="hasRole('ADMIN')">
 
         <!-- Add a link to point to /systems ... this is for the admins -->
