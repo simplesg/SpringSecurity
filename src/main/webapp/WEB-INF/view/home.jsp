@@ -50,7 +50,7 @@
         <!-- Add a link to point to /systems ... this is for the admins -->
 
         <p>
-            <a href="${pageContext.request.contextPath}/directors">IT Systems Meeting</a>
+            <a href="${pageContext.request.contextPath}/directors">Directors Meeting</a>
             (Only for Directors peeps)
         </p>
 
