@@ -49,3 +49,13 @@ VALUES
 ('susan','ROLE_ADMIN');
 
 
+INSERT INTO `users`
+VALUES
+('sorin','{bcrypt}$2a$04$zGGlukh1y810XGPFi3135uK/uOc6Bq84JtwCX2eEdBUeg5wSXSlki',1);
+
+INSERT INTO `authorities`
+VALUES
+('sorin','ROLE_EMPLOYEE'),
+('sorin','ROLE_MANAGER');
+
+
